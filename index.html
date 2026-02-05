@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueño Olímpico - Club de Taekwondo</title>
+        <link rel="stylesheet" href="style.css" />
+</head>
+<div id="modal-logro" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <img id="modal-foto" src="" alt="">
+        <h2 id="modal-nombre"></h2>
+        <h4 id="modal-grado"></h4>
+        <p id="modal-descripcion"></p>
+    </div>
+
+    <div id="admin-edicion-logro" style="display:none; margin-top:1.5rem;">
+
+        <hr>
+
+        <h3>Modo edición</h3>
+        <label>Foto de perfil</label>
+        <input type="file" id="foto-perfil" accept="image/*">
+
+        <label>Foto de portada</label>
+        
+        <input type="file" id="foto-portada" accept="image/*">
+
+
+        <label>Descripción deportiva</label>
+        <textarea id="input-descripcion" rows="5" placeholder="Descripción deportiva"></textarea>
+
+        <button id="guardar-logro">Guardar cambios</button>
+
+    </div>
+</div>
+
+<body>
+    <header style="display: flex; align-items: center; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <img src="img/Logo.png" alt="Logo Sueño Olímpico" style="max-width: 120px;">
+        <div>
+            <p style="margin: 0; text-align: center;">Club de Taekwondo</p>
+            <h1><span id="trigger-admin" style="cursor: pointer;">Sueño</span> Olímpico</h1>
+
+        </div>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#objetivo">Nuestro Objetivo</a></li>
+            <li><a href="#logros">Cinturones Negros</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#implementacion">implementacion</a></li>
+            <li><a href="#redes">Información</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="quienes-somos">
+            <div class="quienes-somos">
+                <h2>Quiénes Somos</h2>
+                <p id="texto-quienes-somos">
+                    Cargando...
+                </p>
+            </div>
+        </section>
+
+        <section id="objetivo">
+            <div class="objetivo">
+                <h2>Nuestro Objetivo</h2>
+                <p id="texto-objetivo">
+                    Cargando...
+                </p>
+            </div>
+        </section>
+
+        <section id="logros">
+            <h2>Nuestros Cinturones Negros</h2>
+            <div class="logros-grid">
+                <div class="logro-card" data-id="1">
+                    <img alt="Julio Cesar Duque Cruz">
+                    <h3>Julio Cesar Duque Cruz</h3>
+                    <p><strong> 7 Dan Federado  7 Dan Kukkiwon</strong></p>
+                    <p>Maestro y fundador del club de taekwondo Sueño Olimpico.</p>
+                </div>
+                <div class="logro-card" data-id="2">
+                    <img alt="Daniel Alejandro Pacheco Pulido">
+                    <h3>Daniel Alejandro Pacheco Pulido</h3>
+                    <p><strong>3er Dan Federado 1er Dan Kukkiwon</strong></p>
+                    <p>Profesor del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="3">
+                    <img alt="Gina Marcela Zabaleta">
+                    <h3>Gina Marcela Zabaleta</h3>
+                    <p><strong>1er Dan Federado</strong></p>
+                    <p>Porfesora de Poomsae del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="4">
+                    <img alt="Luisa Maria Soto Hoyos">
+                    <h3>Luisa Maria Soto Hoyos</h3>
+                    <p><strong>1er Dan Federado</strong></p>
+                    <p>Deportista y artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="5">
+                    <img alt="Paula Alejandra Arrubla">
+                    <h3>Paula Alejandra Arrubla</h3>
+                    <p><strong>3er Dan Federado</strong></p>
+                    <p>Deportista y artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="6">
+                    <img alt="Paula Andrea Cruz Bahos">
+                    <h3>Paula Andrea Cruz Bahos</h3>
+                    <p><strong>1er Dan Federado</strong></p>
+                    <p>Deportista y artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="7">
+                    <img alt="Juan Carlos">
+                    <h3>Juan Carlos Mora Caro</h3>
+                    <p><strong>1er Dan Federado</strong></p>
+                    <p>Artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="8">
+                    <img alt="Santiago Molano">
+                    <h3>Santiago Andrés Molano Sierra</h3>
+                    <p><strong>1er Dan Federado</strong></p>
+                    <p>Deportista y artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+                <div class="logro-card" data-id="9">
+                    <img alt="Eliana">
+                    <h3>Eliana Zipa Pachon</h3>
+                    <p><strong>3er Dan Federado</strong></p>
+                    <p>Artista marcial del club de taekwondo Sueño Olimpico</p>
+                </div>
+            </div>
+            <button id="btn-agregar-logro" style="display:none"> ➕ Agregar Cinturón Negro</button>
+
+            <div class="logro-grupal">
+                <h3>Los cinturones negros del Club Sueño Olímpico representan años de esfuerzo,
+                    disciplina y compromiso con el Taekwondo, siendo ejemplo para las nuevas generaciones.</h3>
+                <img src="img/negros.jpeg" alt="Cinturones negros">
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Nuestro Recorrido</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item" data-galeria="entrenamientos"> 
+                    <img src="img/Entreno.png" alt="Entrenamiento Diario">
+                    <div class="galeria-texto"> 🥵Entrenamiento Diario</div>
+                </div>
+                <div class="galeria-item" data-galeria="competencias"> 
+                    <img src="img/Competencias.png" alt="Competencias">
+                    <div class="galeria-texto"> 🏆 Competencias</div>
+                </div>
+                <div class="galeria-item" data-galeria="grados">
+                    <img src="img/Grados2.jpeg" alt="Ceremonias de Grados">
+                    <div class="galeria-texto"> 🥋 Ceremonias de Grados</div>
+                </div>
+                <div class="galeria-item" data-galeria="eventos">
+                    <img src="img/Eventos.jpeg" alt="Eventos en Equipo">
+                    <div class="galeria-texto"> 👥 Eventos en Equipo</div>
+                </div>
+                <div class="galeria-item" data-galeria="momentos">
+                    <img src="img/Momentos.png" alt="Momentos Memorables">]
+                    <div class="galeria-texto"> ⭐ Momentos Memorables</div>
+                </div>
+
+            </div>
+        </section>
+            
+        <section id="implementacion">
+            <h2>Implementación de Entrenamiento</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                Equipamiento oficial utilizado en nuestros entrenamientos y disponible para la venta.
+            </p>
+
+            <div class="implementacion-grid">
+                <div class="implemento-card">
+                    <img src="img/pechera.jpg" alt="Pechera Taekwondo">
+                    <h3>Pechera</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/casco.jpg" alt="Casco Taekwondo">
+                    <h3>Casco</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/canillera.jpg" alt="Espinilleras Taekwondo">
+                    <h3>Canilleras</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/barcera.jpg" alt="Braceras Taekwondo">
+                    <h3>Braceras</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/guantes.jpg" alt="Guantes Taekwondo">
+                    <h3>Guantines</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/empeineras.jpg" alt="Empeineras Taekwondo">
+                    <h3>Empeineras</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/cocaF.jpg" alt="Coca Fememnina Taekwondo">
+                    <h3>Protector genital femenino</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/cocaM.jpg" alt="Coca Masculina Taekwondo">
+                    <h3>Protector genital masculino</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/bucal.jpg" alt="Bucal Taekwondo">
+                    <h3>Protector bucal</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/DobookC.jpg" alt="Dobok Taekwondo">
+                    <h3>Dobok Combate</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/Dobook.jpg" alt="Dobok Taekwondo">
+                    <h3>Dobok Poomsae</h3>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/sistema.jpg" alt="Pechera Taekwondo">
+                    <h3>Sistema electronico combate (alquiler)</h3>
+                    <h4>Petos, cascos, antenas, baterias y software para modalidad individual y tk3</h4>
+                </div>
+
+                <div class="implemento-card">
+                    <img src="img/Sp.png" alt="Pechera Taekwondo">
+                    <h3>Sistema Poomsae (alquiler)</h3>
+                    <h4>Software para modalidad individual, parejas y equipos para todas las categorias</h4>
+                </div>
+
+            </div>
+
+            <div class="contacto-implementacion">
+                <p class="contacto-texto">
+                    Para conocer los precios de los implementos o del alquiler del sistema,
+                    comuníquese a los siguientes números dando click en las imágenes.
+                </p>
+
+                <div class="contacto-ws">
+                    <a href="https://wa.me/573174292206?text=Hola, quiero conocer los precios de los implementos"
+                    target="_blank" class="ws-card">
+                        <img src="img/wa2.png" alt="WhatsApp Implementos">
+                        <span>Compra implementos</span>
+                    </a>
+
+                    <a href="https://wa.me/573142964263?text=Hola, quiero conocer el precio del alquiler del sistema"
+                    target="_blank" class="ws-card">
+                        <img src="img/wa2.png" alt="WhatsApp Alquiler">
+                        <span>Alquiler sistema</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="redes">
+            <div class="informacion">
+                <h2>Información General</h2>
+
+                <p>
+                    En el Club de Taekwondo <strong>Sueño Olímpico</strong> ofrecemos entrenamientos para niños,
+                    jóvenes y adultos, desde nivel principiante hasta alto rendimiento.
+                </p>
+
+                <h3>Horarios de Entrenamiento</h3>
+
+                <div class="horarios-grid">
+                    <div class="horario-card">
+                        <h4>Horarios Niños de 4 a 6 años</h4>
+                        <p><em>Escoge el que mejor se adecue a tus horarios.</em></p>
+
+                        <ul>
+                            <li><strong>Lunes - Miercoles - Viernes:</strong></li>
+                            <p> 4:00 p.m.– 5:00 p.m.</p>
+                            <li><strong>Lunes - Miercoles - Viernes:</strong></li> 
+                            <p>5:00 p.m. – 6:00 p.m.</p>
+                            <li><strong>Sábados:</strong></li>
+                            <p> 9:00 a.m. – 10:00 a.m.</p>
+                        </ul>
+                        
+                    </div>
+                    <div class="horario-card">
+                        <h4>Horarios Niños de 7 a 11 años</h4>
+                        <ul>
+                            <li><strong>Martes - Jueves:</strong></li>
+                            <p>5:00 p.m.– 6:30 p.m.</p>
+                            <li><strong>Sábados:</strong></li>
+                            <p>7:30 a.m. – 9:00 a.m.</p>
+                        </ul>
+                    </div>
+
+                    <div class="horario-card">
+                        <h4>Horarios Jovenes y Adultos</h4>
+                        <ul>
+                            <li><strong>Lunes - Miercoles - Viernes:</strong></li>
+                            <p>6:00 a.m.– 7:30 a.m.</p>
+                            <li><strong>Lunes - Miercoles - Viernes:</strong></li>
+                            <p>6:00 p.m. – 7:30 p.m.</p>
+                            <li><strong>Sábados:</strong></li>
+                            <p>7:30 a.m. – 9:00 a.m.</p>
+                        </ul>
+                        
+                    </div>
+
+                    <div class="horario-card">
+                        <h4>Horarios Poomsae</h4>
+                        <ul>
+                            <li><strong>Martes - Jueves:</strong></li>
+                            <li>6:30 p.m.– 8:00 p.m.</li>
+                            <li><strong>Sábados:</strong></li>
+                            <li>10:00 a.m. – 11:30 a.m.</li>
+                        </ul>
+                        <p><em>El horario de sabado de poomsae se confirma el viernes anterior a la clase</em></p>
+                    </div>
+                </div>
+
+                <h3>Cronograma Anual 2026</h3>
+                <p>
+                    Consulta y descarga el cronograma oficial del club, donde encontrarás
+                    fechas de exámenes de grado, competencias, seminarios y eventos especiales.
+                </p>
+
+                <a href="img/Cronograma_Academia_2026.pdf" download class="btn-descarga">
+                    📄 Descargar Cronograma 2026
+                </a>
+            </div>
+
+            <div class="redes-sociales">
+                <h2>Nuestras Redes Sociales</h2>
+                <p style="text-align: center; margin-bottom: 2rem;">
+                    Contactanos, síguenos y mantente al día con nuestras actividades, eventos y logros.
+                    (Dale click a las imagenes de nuestras redes)
+                </p>
+
+                <div class="redes-container">
+                    <a href="https://www.facebook.com/tkdsuenolimpico" target="_blank" class="red-social">
+                        <img src="img/fa.png" alt="Facebook Sueño Olímpico">
+                        <span>Facebook</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/sueno_olimpico.tkd/" target="_blank" class="red-social">
+                        <img src="img/in.png" alt="Instagram Sueño Olímpico">
+                        <span>Instagram</span>
+                    </a>
+
+                    <a href="https://wa.me/573118110596?text=Hola, quiero tener más información por favor" target="_blank" class="red-social">
+                        <img src="img/wa.png" alt="WhatsApp Sueño Olímpico">
+                        <span>WhatsApp</span>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@tkdsuenoolimpico?lang=es-419" target="_blank" class="red-social">
+                        <img src="img/t.png" alt="Tiktok Sueño Olímpico">
+                        <span>Tiktok</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="modal-galeria" class="modal">
+        <div class="modal-contenido modal-galeria">
+            <span class="cerrar">&times;</span>
+            <div id="galeria-modal-grid"></div>
+        </div>
+    </div>
+
+    <div id="modal-admin" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-admin">&times;</span>
+            <h2>Acceso de Administración</h2>
+            <p>Ingresa la contraseña para editar el contenido</p>
+            <input type="password" id="admin-password" placeholder="Contraseña">
+            <button id="admin-submit">Ingresar</button>
+        </div>
+    </div>
+
+    <div id="modal-agregar-logro" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+
+            <h2>Nuevo Cinturón Negro</h2>
+
+            <input id="nuevo-nombre" placeholder="Nombre">
+            <input id="nuevo-grado" placeholder="Grado">
+            <input id="nuevo-foto-card" placeholder="URL foto perfil">
+            <input id="nuevo-foto-modal" placeholder="URL foto portada">
+            <textarea id="nuevo-descripcion" placeholder="Descripción"></textarea>
+
+            <div class="botones-logro">
+                <button id="crear-logro">Crear</button>
+                <button id="cancelar-logro">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2026 Sueño Olímpico - Club de Taekwondo. Todos los derechos reservados.</p>
+        <p>Formando campeones con disciplina y pasión</p>
+    </footer>
+    
+<script src="script.js"></script>
+<script src="script_admin.js"></script>
+<button id="btn-guardar" class="btn-guardar">
+    💾 Guardar cambios
+</button>
+
+</body>
+
+</html>
