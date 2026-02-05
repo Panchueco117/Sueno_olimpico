@@ -31,7 +31,7 @@ const dbConfig = {
     waitForConnections: true,
     connectionLimit: 10,
     ssl: {
-        rejectUnauthorized: false
+        rejectUnauthorized: true
     }
 };
 
@@ -260,6 +260,7 @@ app.post(
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+
 
 
 
