@@ -12,9 +12,7 @@ app.use(express.static(__dirname));
 
 app.use("/img", express.static("img"));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
+
 
 /* =========================
    CONFIGURACIÓN DIRECTA
@@ -258,6 +256,10 @@ app.post(
         }
     }
 );
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 
 
